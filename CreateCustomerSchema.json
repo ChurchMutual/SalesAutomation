@@ -2,8 +2,12 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "http://example.com/example.json",
     "type": "object",
+    "readOnly": false,
+    "writeOnly": false,
+    "minProperties": 0,
     "title": "The Root Schema",
     "description": "The root schema comprises the entire JSON document.",
+    "additionalProperties": true,
     "required": [
         "action",
         "organization",
@@ -14,12 +18,21 @@
         "action": {
             "$id": "#/properties/action",
             "type": "array",
+            "readOnly": false,
+            "writeOnly": false,
+            "uniqueItems": false,
+            "minItems": 0,
+            "minContains": 1,
             "title": "The Action Schema",
             "description": "An explanation about the purpose of this instance.",
             "default": [],
+            "additionalItems": true,
             "items": {
                 "$id": "#/properties/action/items",
                 "type": "object",
+                "readOnly": false,
+                "writeOnly": false,
+                "minProperties": 0,
                 "title": "The Items Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "default": {},
@@ -34,6 +47,7 @@
                         "name": "CREATE_CONTACT"
                     }
                 ],
+                "additionalProperties": true,
                 "required": [
                     "name"
                 ],
@@ -41,6 +55,9 @@
                     "name": {
                         "$id": "#/properties/action/items/properties/name",
                         "type": "string",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minLength": 0,
                         "title": "The Name Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": "",
@@ -54,21 +71,22 @@
         "organization": {
             "$id": "#/properties/organization",
             "type": "object",
+            "readOnly": false,
+            "writeOnly": false,
+            "minProperties": 0,
             "title": "The Organization Schema",
             "description": "An explanation about the purpose of this instance.",
             "default": {},
             "examples": [
                 {
-                    "industry": "",
-                    "isTarget": "",
-                    "revenue": "",
                     "shortname": "",
                     "organization_id": "Unique identifier for Customer.Pega will return this during create request",
+                    "cmcustomerid": "",
                     "website": "",
                     "businessTerritory": "",
                     "employeeCount": "",
-                    "ticker": "",
                     "parentorg": "",
+                    "ticker": "",
                     "domains": [
                         {
                             "name": ""
@@ -77,20 +95,25 @@
                     "name": "",
                     "addresses": [
                         {
-                            "streetaddress": "",
+                            "addresstype": "",
                             "city": "",
+                            "streetaddress": "",
                             "zip": "",
-                            "isPrimary": "",
                             "country": "",
+                            "isPrimary": "",
                             "state": "",
-                            "address": "",
-                            "addresstype": ""
+                            "address": ""
                         }
-                    ]
+                    ],
+                    "industry": "",
+                    "isTarget": "",
+                    "revenue": ""
                 }
             ],
+            "additionalProperties": true,
             "required": [
                 "organization_id",
+                "cmcustomerid",
                 "name",
                 "ticker",
                 "shortname",
@@ -108,6 +131,9 @@
                 "organization_id": {
                     "$id": "#/properties/organization/properties/organization_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Organization_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -115,9 +141,25 @@
                         "Unique identifier for Customer.Pega will return this during create request"
                     ]
                 },
+                "cmcustomerid": {
+                    "$id": "#/properties/organization/properties/cmcustomerid",
+                    "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
+                    "title": "The Cmcustomerid Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
                 "name": {
                     "$id": "#/properties/organization/properties/name",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Name Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -128,6 +170,9 @@
                 "ticker": {
                     "$id": "#/properties/organization/properties/ticker",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Ticker Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -138,6 +183,9 @@
                 "shortname": {
                     "$id": "#/properties/organization/properties/shortname",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Shortname Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -148,6 +196,9 @@
                 "revenue": {
                     "$id": "#/properties/organization/properties/revenue",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Revenue Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -158,6 +209,9 @@
                 "employeeCount": {
                     "$id": "#/properties/organization/properties/employeeCount",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Employeecount Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -168,6 +222,9 @@
                 "isTarget": {
                     "$id": "#/properties/organization/properties/isTarget",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Istarget Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -178,6 +235,9 @@
                 "parentorg": {
                     "$id": "#/properties/organization/properties/parentorg",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Parentorg Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -188,6 +248,9 @@
                 "website": {
                     "$id": "#/properties/organization/properties/website",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Website Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -198,6 +261,9 @@
                 "businessTerritory": {
                     "$id": "#/properties/organization/properties/businessTerritory",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Businessterritory Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -208,6 +274,9 @@
                 "industry": {
                     "$id": "#/properties/organization/properties/industry",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Industry Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -218,12 +287,21 @@
                 "addresses": {
                     "$id": "#/properties/organization/properties/addresses",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Addresses Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/organization/properties/addresses/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
@@ -231,14 +309,15 @@
                             {
                                 "address": "",
                                 "addresstype": "",
-                                "streetaddress": "",
                                 "city": "",
+                                "streetaddress": "",
                                 "zip": "",
-                                "isPrimary": "",
                                 "country": "",
+                                "isPrimary": "",
                                 "state": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "addresstype",
                             "isPrimary",
@@ -253,6 +332,9 @@
                             "addresstype": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/addresstype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Addresstype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -263,6 +345,9 @@
                             "isPrimary": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/isPrimary",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Isprimary Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -273,6 +358,9 @@
                             "streetaddress": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/streetaddress",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Streetaddress Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -283,6 +371,9 @@
                             "address": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/address",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Address Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -293,6 +384,9 @@
                             "city": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/city",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The City Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -303,6 +397,9 @@
                             "state": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/state",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The State Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -313,6 +410,9 @@
                             "zip": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/zip",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Zip Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -323,6 +423,9 @@
                             "country": {
                                 "$id": "#/properties/organization/properties/addresses/items/properties/country",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Country Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -336,12 +439,21 @@
                 "domains": {
                     "$id": "#/properties/organization/properties/domains",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Domains Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/organization/properties/domains/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
@@ -350,6 +462,7 @@
                                 "name": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "name"
                         ],
@@ -357,6 +470,9 @@
                             "name": {
                                 "$id": "#/properties/organization/properties/domains/items/properties/name",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Name Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -372,16 +488,18 @@
         "account": {
             "$id": "#/properties/account",
             "type": "object",
+            "readOnly": false,
+            "writeOnly": false,
+            "minProperties": 0,
             "title": "The Account Schema",
             "description": "An explanation about the purpose of this instance.",
             "default": {},
             "examples": [
                 {
-                    "owner": "",
                     "organization_id": "",
                     "shortname": "",
-                    "website": "",
                     "phoneNumber": "",
+                    "website": "",
                     "closeComments": "",
                     "businessTerritory": "",
                     "employeeCount": "",
@@ -393,21 +511,23 @@
                     "name": "",
                     "addresses": [
                         {
-                            "state": "",
-                            "address": "",
                             "addresstype": "",
                             "streetaddress": "",
                             "city": "",
                             "zip": "",
                             "isPrimary": "",
-                            "country": ""
+                            "country": "",
+                            "state": "",
+                            "address": ""
                         }
                     ],
                     "account_id": "Unique Record.Pega will return this during create request",
                     "isTarget": "",
-                    "revenue": ""
+                    "revenue": "",
+                    "owner": ""
                 }
             ],
+            "additionalProperties": true,
             "required": [
                 "account_id",
                 "name",
@@ -428,6 +548,9 @@
                 "account_id": {
                     "$id": "#/properties/account/properties/account_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Account_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -438,6 +561,9 @@
                 "name": {
                     "$id": "#/properties/account/properties/name",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Name Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -448,6 +574,9 @@
                 "shortname": {
                     "$id": "#/properties/account/properties/shortname",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Shortname Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -458,6 +587,9 @@
                 "organization_id": {
                     "$id": "#/properties/account/properties/organization_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Organization_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -468,6 +600,9 @@
                 "owner": {
                     "$id": "#/properties/account/properties/owner",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Owner Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -478,6 +613,9 @@
                 "revenue": {
                     "$id": "#/properties/account/properties/revenue",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Revenue Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -488,6 +626,9 @@
                 "employeeCount": {
                     "$id": "#/properties/account/properties/employeeCount",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Employeecount Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -498,6 +639,9 @@
                 "isTarget": {
                     "$id": "#/properties/account/properties/isTarget",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Istarget Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -508,6 +652,9 @@
                 "website": {
                     "$id": "#/properties/account/properties/website",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Website Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -518,6 +665,9 @@
                 "businessTerritory": {
                     "$id": "#/properties/account/properties/businessTerritory",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Businessterritory Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -528,6 +678,9 @@
                 "closeComments": {
                     "$id": "#/properties/account/properties/closeComments",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Closecomments Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -538,6 +691,9 @@
                 "phoneNumber": {
                     "$id": "#/properties/account/properties/phoneNumber",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Phonenumber Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -548,27 +704,37 @@
                 "addresses": {
                     "$id": "#/properties/account/properties/addresses",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Addresses Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/account/properties/addresses/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
-                                "streetaddress": "",
+                                "addresstype": "",
                                 "city": "",
+                                "streetaddress": "",
                                 "zip": "",
-                                "country": "",
                                 "isPrimary": "",
+                                "country": "",
                                 "state": "",
-                                "address": "",
-                                "addresstype": ""
+                                "address": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "addresstype",
                             "isPrimary",
@@ -583,6 +749,9 @@
                             "addresstype": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/addresstype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Addresstype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -593,6 +762,9 @@
                             "isPrimary": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/isPrimary",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Isprimary Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -603,6 +775,9 @@
                             "streetaddress": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/streetaddress",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Streetaddress Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -613,6 +788,9 @@
                             "address": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/address",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Address Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -623,6 +801,9 @@
                             "city": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/city",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The City Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -633,6 +814,9 @@
                             "state": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/state",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The State Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -643,6 +827,9 @@
                             "zip": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/zip",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Zip Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -653,6 +840,9 @@
                             "country": {
                                 "$id": "#/properties/account/properties/addresses/items/properties/country",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Country Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -666,12 +856,21 @@
                 "domains": {
                     "$id": "#/properties/account/properties/domains",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Domains Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/account/properties/domains/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
@@ -680,6 +879,7 @@
                                 "name": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "name"
                         ],
@@ -687,6 +887,9 @@
                             "name": {
                                 "$id": "#/properties/account/properties/domains/items/properties/name",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Name Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -702,11 +905,28 @@
         "contact": {
             "$id": "#/properties/contact",
             "type": "object",
+            "readOnly": false,
+            "writeOnly": false,
+            "minProperties": 0,
             "title": "The Contact Schema",
             "description": "An explanation about the purpose of this instance.",
             "default": {},
             "examples": [
                 {
+                    "fax": "",
+                    "managementLevel": "",
+                    "addresses": [
+                        {
+                            "zip": "",
+                            "isPrimary": "",
+                            "country": "",
+                            "state": "",
+                            "address": "",
+                            "addresstype": "",
+                            "streetaddress": "",
+                            "city": ""
+                        }
+                    ],
                     "associatedaccounts": [
                         {
                             "enddate": "",
@@ -721,51 +941,38 @@
                     "birthdate": "",
                     "assistantphone": "",
                     "lastName": "",
-                    "assistantemail": "",
                     "reportsto": "",
+                    "assistantemail": "",
                     "associatedcontacts": [
                         {
-                            "relationshiptype": "",
-                            "relationshipdescription": "",
                             "contact_id": "",
                             "startdate": "",
-                            "enddate": ""
-                        }
-                    ],
-                    "organization_id": "",
-                    "associatedorgs": [
-                        {
-                            "startdate": "",
-                            "organization_id": "",
                             "enddate": "",
                             "relationshiptype": "",
                             "relationshipdescription": ""
                         }
                     ],
+                    "organization_id": "",
+                    "associatedorgs": [
+                        {
+                            "relationshipdescription": "",
+                            "startdate": "",
+                            "organization_id": "",
+                            "enddate": "",
+                            "relationshiptype": ""
+                        }
+                    ],
                     "influentialrating": "",
                     "territoryID": "",
-                    "contact_id": "Unique Record.Pega will return this during create request",
                     "salutation": "",
+                    "contact_id": "Unique Record.Pega will return this during create request",
                     "title": "",
                     "assistantname": "",
                     "department": "",
-                    "favorabilityrating": "",
-                    "fax": "",
-                    "managementLevel": "",
-                    "addresses": [
-                        {
-                            "addresstype": "",
-                            "city": "",
-                            "streetaddress": "",
-                            "zip": "",
-                            "country": "",
-                            "isPrimary": "",
-                            "state": "",
-                            "address": ""
-                        }
-                    ]
+                    "favorabilityrating": ""
                 }
             ],
+            "additionalProperties": true,
             "required": [
                 "contact_id",
                 "organization_id",
@@ -793,6 +1000,9 @@
                 "contact_id": {
                     "$id": "#/properties/contact/properties/contact_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Contact_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -803,6 +1013,9 @@
                 "organization_id": {
                     "$id": "#/properties/contact/properties/organization_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Organization_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -813,6 +1026,9 @@
                 "account_id": {
                     "$id": "#/properties/contact/properties/account_id",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Account_id Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -823,6 +1039,9 @@
                 "salutation": {
                     "$id": "#/properties/contact/properties/salutation",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Salutation Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -833,6 +1052,9 @@
                 "lastName": {
                     "$id": "#/properties/contact/properties/lastName",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Lastname Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -843,6 +1065,9 @@
                 "title": {
                     "$id": "#/properties/contact/properties/title",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Title Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -853,6 +1078,9 @@
                 "managementLevel": {
                     "$id": "#/properties/contact/properties/managementLevel",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Managementlevel Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -863,6 +1091,9 @@
                 "department": {
                     "$id": "#/properties/contact/properties/department",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Department Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -873,6 +1104,9 @@
                 "reportsto": {
                     "$id": "#/properties/contact/properties/reportsto",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Reportsto Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -883,6 +1117,9 @@
                 "favorabilityrating": {
                     "$id": "#/properties/contact/properties/favorabilityrating",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Favorabilityrating Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -893,6 +1130,9 @@
                 "influentialrating": {
                     "$id": "#/properties/contact/properties/influentialrating",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Influentialrating Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -903,6 +1143,9 @@
                 "territoryID": {
                     "$id": "#/properties/contact/properties/territoryID",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Territoryid Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -913,6 +1156,9 @@
                 "assistantemail": {
                     "$id": "#/properties/contact/properties/assistantemail",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Assistantemail Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -923,6 +1169,9 @@
                 "assistantname": {
                     "$id": "#/properties/contact/properties/assistantname",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Assistantname Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -933,6 +1182,9 @@
                 "assistantphone": {
                     "$id": "#/properties/contact/properties/assistantphone",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Assistantphone Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -943,6 +1195,9 @@
                 "birthdate": {
                     "$id": "#/properties/contact/properties/birthdate",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Birthdate Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -953,6 +1208,9 @@
                 "fax": {
                     "$id": "#/properties/contact/properties/fax",
                     "type": "string",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minLength": 0,
                     "title": "The Fax Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
@@ -963,27 +1221,37 @@
                 "addresses": {
                     "$id": "#/properties/contact/properties/addresses",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Addresses Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/contact/properties/addresses/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
-                                "zip": "",
-                                "isPrimary": "",
-                                "country": "",
-                                "state": "",
-                                "address": "",
                                 "addresstype": "",
                                 "streetaddress": "",
-                                "city": ""
+                                "city": "",
+                                "zip": "",
+                                "country": "",
+                                "isPrimary": "",
+                                "state": "",
+                                "address": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "addresstype",
                             "isPrimary",
@@ -998,6 +1266,9 @@
                             "addresstype": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/addresstype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Addresstype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1008,6 +1279,9 @@
                             "isPrimary": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/isPrimary",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Isprimary Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1018,6 +1292,9 @@
                             "streetaddress": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/streetaddress",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Streetaddress Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1028,6 +1305,9 @@
                             "address": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/address",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Address Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1038,6 +1318,9 @@
                             "city": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/city",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The City Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1048,6 +1331,9 @@
                             "state": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/state",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The State Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1058,6 +1344,9 @@
                             "zip": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/zip",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Zip Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1068,6 +1357,9 @@
                             "country": {
                                 "$id": "#/properties/contact/properties/addresses/items/properties/country",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Country Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1081,24 +1373,34 @@
                 "associatedorgs": {
                     "$id": "#/properties/contact/properties/associatedorgs",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Associatedorgs Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/contact/properties/associatedorgs/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
-                                "relationshipdescription": "",
-                                "startdate": "",
                                 "organization_id": "",
                                 "enddate": "",
-                                "relationshiptype": ""
+                                "relationshiptype": "",
+                                "relationshipdescription": "",
+                                "startdate": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "organization_id",
                             "relationshiptype",
@@ -1110,6 +1412,9 @@
                             "organization_id": {
                                 "$id": "#/properties/contact/properties/associatedorgs/items/properties/organization_id",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Organization_id Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1120,6 +1425,9 @@
                             "relationshiptype": {
                                 "$id": "#/properties/contact/properties/associatedorgs/items/properties/relationshiptype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshiptype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1130,6 +1438,9 @@
                             "relationshipdescription": {
                                 "$id": "#/properties/contact/properties/associatedorgs/items/properties/relationshipdescription",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshipdescription Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1140,6 +1451,9 @@
                             "startdate": {
                                 "$id": "#/properties/contact/properties/associatedorgs/items/properties/startdate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Startdate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1150,6 +1464,9 @@
                             "enddate": {
                                 "$id": "#/properties/contact/properties/associatedorgs/items/properties/enddate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Enddate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1163,25 +1480,35 @@
                 "associatedaccounts": {
                     "$id": "#/properties/contact/properties/associatedaccounts",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Associatedaccounts Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/contact/properties/associatedaccounts/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
-                                "startdate": "",
-                                "organization_id": "",
                                 "relationshiptype": "",
                                 "account_id": "",
                                 "relationshipdescription": "",
-                                "enddate": ""
+                                "enddate": "",
+                                "startdate": "",
+                                "organization_id": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "organization_id",
                             "account_id",
@@ -1194,6 +1521,9 @@
                             "organization_id": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/organization_id",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Organization_id Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1204,6 +1534,9 @@
                             "account_id": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/account_id",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Account_id Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1214,6 +1547,9 @@
                             "relationshiptype": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/relationshiptype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshiptype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1224,6 +1560,9 @@
                             "relationshipdescription": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/relationshipdescription",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshipdescription Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1234,6 +1573,9 @@
                             "startdate": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/startdate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Startdate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1244,6 +1586,9 @@
                             "enddate": {
                                 "$id": "#/properties/contact/properties/associatedaccounts/items/properties/enddate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Enddate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1257,24 +1602,34 @@
                 "associatedcontacts": {
                     "$id": "#/properties/contact/properties/associatedcontacts",
                     "type": "array",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "uniqueItems": false,
+                    "minItems": 0,
+                    "minContains": 1,
                     "title": "The Associatedcontacts Schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
+                    "additionalItems": true,
                     "items": {
                         "$id": "#/properties/contact/properties/associatedcontacts/items",
                         "type": "object",
+                        "readOnly": false,
+                        "writeOnly": false,
+                        "minProperties": 0,
                         "title": "The Items Schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
+                                "enddate": "",
                                 "relationshiptype": "",
                                 "relationshipdescription": "",
                                 "contact_id": "",
-                                "startdate": "",
-                                "enddate": ""
+                                "startdate": ""
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "contact_id",
                             "relationshiptype",
@@ -1286,6 +1641,9 @@
                             "contact_id": {
                                 "$id": "#/properties/contact/properties/associatedcontacts/items/properties/contact_id",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Contact_id Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1296,6 +1654,9 @@
                             "relationshiptype": {
                                 "$id": "#/properties/contact/properties/associatedcontacts/items/properties/relationshiptype",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshiptype Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1306,6 +1667,9 @@
                             "relationshipdescription": {
                                 "$id": "#/properties/contact/properties/associatedcontacts/items/properties/relationshipdescription",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Relationshipdescription Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1316,6 +1680,9 @@
                             "startdate": {
                                 "$id": "#/properties/contact/properties/associatedcontacts/items/properties/startdate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Startdate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
@@ -1326,6 +1693,9 @@
                             "enddate": {
                                 "$id": "#/properties/contact/properties/associatedcontacts/items/properties/enddate",
                                 "type": "string",
+                                "readOnly": false,
+                                "writeOnly": false,
+                                "minLength": 0,
                                 "title": "The Enddate Schema",
                                 "description": "An explanation about the purpose of this instance.",
                                 "default": "",
